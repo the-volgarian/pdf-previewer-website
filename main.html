@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Preview</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    #pdfFrame { border: 1px solid #888; border-radius: 10px; margin-top: 20px; }
+    label { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <label for="pdfInput">Избери PDF файл за преглед:</label>
+  <input type="file" id="pdfInput" accept="application/pdf">
+  <iframe id="pdfFrame" width="100%" height="700px"></iframe>
+  <script>
+    document.getElementById('pdfInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if(file && file.type === "application/pdf") {
+        document.getElementById('pdfFrame').src = URL.createObjectURL(file);
+      } else {
+        document.getElementById('pdfFrame').src = "";
+      }
+    });
+  </script>
+</body>
+</html>
