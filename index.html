@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang=\"bg\">
 <head>
-  <meta charset="UTF-8">
+  <meta charset=\"UTF-8\">
   <title>DFD GROUP - PDF Preview</title>
   <style>
     body {
@@ -55,35 +55,55 @@
       text-align: center;
     }
 
-    input[type="file"] {
+    input[type=\"file\"] {
       margin: 10px auto;
       display: block;
+    }
+
+    #instructions {
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      background-color: #fff8dc;
+      border: 1px solid #f0e68c;
+      border-radius: 10px;
+      color: #333;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div id="header">
-    <span id="logo">DFD GROUP</span>
+  <div id=\"header\">
+    <span id=\"logo\">DFD GROUP</span>
   </div>
 
-  <div id="info-container">
+  <div id=\"info-container\">
     <p>
       Това приложение е създадено за преглед на PDF файлове специално предназначено за Zoho Creator.
     </p>
   </div>
 
-  <label for="pdfInput">Избери PDF файл за преглед:</label>
-  <input type="file" id="pdfInput" accept="application/pdf">
+  <div id=\"instructions\">
+    <p><strong>Упътване:</strong></p>
+    <ul>
+      <li>Програмата може да чете само файлове в PDF формат.</li>
+      <li>Сравнявайте качения документ с извлечената информация от изкуствения интелект. <strong>ВЪЗМОЖНО Е ДА ХАЛЮЦИНИРА.</strong></li>
+      <li>Ако откриете бъг или грешка, моля, използвайте формата за тикет репорт.</li>
+    </ul>
+  </div>
 
-  <iframe id="pdfFrame" width="90%" height="700px"></iframe>
+  <label for=\"pdfInput\">Избери PDF файл за преглед:</label>
+  <input type=\"file\" id=\"pdfInput\" accept=\"application/pdf\">
+
+  <iframe id=\"pdfFrame\" width=\"90%\" height=\"700px\"></iframe>
 
   <script>
     document.getElementById('pdfInput').addEventListener('change', function(e) {
       const file = e.target.files[0];
-      if(file && file.type === "application/pdf") {
+      if(file && file.type === \"application/pdf\") {
         document.getElementById('pdfFrame').src = URL.createObjectURL(file);
       } else {
-        document.getElementById('pdfFrame').src = "";
+        document.getElementById('pdfFrame').src = \"\";
       }
     });
   </script>
