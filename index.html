@@ -97,15 +97,15 @@
 
   <iframe id=\"pdfFrame\" width=\"90%\" height=\"700px\"></iframe>
 
-  <script>
-    document.getElementById('pdfInput').addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      if(file && file.type === \"application/pdf\") {
-        document.getElementById('pdfFrame').src = URL.createObjectURL(file);
-      } else {
-        document.getElementById('pdfFrame').src = \"\";
-      }
-    });
-  </script>
+<script>
+  document.getElementById('pdfInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if(file && file.type === "application/pdf") {
+      document.getElementById('pdfFrame').src = URL.createObjectURL(file);
+    } else {
+      document.getElementById('pdfFrame').src = "";
+    }
+  });
+</script>
 </body>
 </html>
