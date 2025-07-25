@@ -1,99 +1,69 @@
 <!DOCTYPE html>
-<html lang=\"bg\">
+<html lang="bg">
 <head>
-  <meta charset=\"UTF-8\">
+  <meta charset="UTF-8">
   <title>DFD GROUP - PDF Preview</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background-color: #ffffff;
     }
 
-    #header {
-      background-color: #333;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    #logo {
-      color: #ff3b3b;
-      font-size: 32px;
-      font-weight: bold;
-      letter-spacing: 3px;
-    }
-
-    #info-container {
-      padding: 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #ececec, #fafafa);
-      border-bottom: 2px solid #ddd;
-      box-shadow: inset 0 -4px 6px rgba(0,0,0,0.05);
-    }
-
-    #info-container p {
+    .custom-file-upload {
+      display: inline-block;
+      padding: 14px 40px;
       font-size: 16px;
-      color: #555;
-      margin-top: 20px;
+      font-weight: 600;
+      color: #222;
+      background: #ffffff;
+      border: 1.5px solid #e3e3ea;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow:
+        2px 2px 8px #e3e3ea,
+        -2px -2px 6px #fff;
+      transition: all 0.18s;
+      margin: 26px auto 8px auto;
+      letter-spacing: 1.2px;
+      user-select: none;
+    }
+    .custom-file-upload:hover, .custom-file-upload:focus {
+      background: #f8f8fb;
+      color: #000;
+      box-shadow:
+        0 2px 18px #ececf3,
+        0 -2px 8px #fff;
+      border-color: #d3d3dd;
+      outline: none;
+      transform: translateY(-2px) scale(1.03);
     }
 
-    #pdfFrame {
-      border: 1px solid #888;
-      border-radius: 10px;
-      margin: 20px auto;
-      display: block;
+    #pdfInput {
+      display: none;
     }
-
     label {
       font-weight: bold;
       display: block;
       margin-top: 20px;
       text-align: center;
     }
-
-    input[type=\"file\"] {
-      margin: 10px auto;
-      display: block;
-      text-align: center;
-      width: fit-content;
-    }
-
-    #instructions {
-      padding: 20px;
-      margin: 20px auto;
-      width: 90%;
-      background-color: #fff8dc;
-      border: 1px solid #f0e68c;
+    #pdfFrame {
+      border: 1px solid #e0e0e0;
       border-radius: 10px;
-      color: #333;
-      font-size: 14px;
+      margin: 20px auto;
+      display: block;
+      background: #fff;
     }
   </style>
 </head>
 <body>
-  <!-- <div id="header">
-    <span id="logo">DFD GROUP</span>
+  <div style="text-align:center;">
+    <label for="pdfInput" class="custom-file-upload">
+      Качи PDF файл
+    </label>
   </div>
-
-  <div id="info-container">
-    <p>
-      Това приложение е създадено за преглед на PDF файлове специално предназначено за Zoho Creator.
-    </p>
-  </div>
-
-  <div id="instructions">
-    <p><strong>Упътване:</strong></p>
-    <ul>
-      <li>Програмата може да чете само файлове в PDF формат.</li>
-      <li>Сравнявайте качения документ с извлечената информация от изкуствения интелект. <strong>ВЪЗМОЖНО Е ДА ХАЛЮЦИНИРА.</strong></li>
-      <li>Ако откриете бъг или грешка, моля, използвайте формата за тикет репорт.</li>
-    </ul>
-  </div> -->
-
-  <label for="pdfInput">Избери PDF файл за преглед:</label>
   <input type="file" id="pdfInput" accept="application/pdf">
 
   <iframe id="pdfFrame" width="90%" height="700px"></iframe>
@@ -110,3 +80,4 @@
 </script>
 </body>
 </html>
+
